@@ -262,6 +262,611 @@
   </div>
 
   <!-- ===== FORMULAIRE ===== -->
+  <form action="https://formsubmit.co/ajax/frederic.dagnon@hotmail.fr" method="POST" id="main-form" novalidate>
+    <input type="hidden" name="_subject" value="Nouveau brief stratégie digitale">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div class="card">
+
+      <!-- ÉTAPE 1 : Identité -->
+      <div class="section active" id="s1">
+        <p class="section-tag">1 / 6 — Identité</p>
+        <h2>Identité de la marque</h2>
+
+        <div class="field">
+          <label class="label" for="brand-name">Nom de la marque / entreprise</label>
+          <input type="text" id="brand-name" name="marque" placeholder="Ex. : Ma Marque, Studio Créa…">
+        </div>
+
+        <div class="field">
+          <label class="label" for="secteur">Secteur d'activité</label>
+          <select id="secteur" name="secteur">
+            <option value="">— Sélectionner —</option>
+            <option>Mode & beauté</option>
+            <option>Alimentation & restauration</option>
+            <option>Santé & bien-être</option>
+            <option>Éducation & formation</option>
+            <option>Immobilier & construction</option>
+            <option>Finance & assurance</option>
+            <option>Commerce & distribution</option>
+            <option>Tourisme & hôtellerie</option>
+            <option>Art, culture & divertissement</option>
+            <option>Technologies & services numériques</option>
+            <option>Transport & logistique</option>
+            <option>Agriculture & agroalimentaire</option>
+            <option>ONG & secteur associatif</option>
+            <option>Industrie & B2B</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="label" for="secteur-autre">Si "Autre", précisez</label>
+          <input type="text" id="secteur-autre" name="secteur_autre" placeholder="Décrivez votre secteur…">
+        </div>
+
+        <div class="field">
+          <label class="label" for="mission">En une phrase, quelle est la mission de votre marque ?</label>
+          <textarea id="mission" name="mission" placeholder="Ce que vous faites, pour qui, et pourquoi…"></textarea>
+        </div>
+
+        <div class="field">
+          <label class="label" for="valeurs">Quelles sont les 3 valeurs clés de votre marque ?</label>
+          <p class="hint">Séparées par des virgules</p>
+          <input type="text" id="valeurs" name="valeurs" placeholder="Ex. : Authenticité, qualité, accessibilité">
+        </div>
+      </div>
+
+      <!-- ÉTAPE 2 : Positionnement -->
+      <div class="section" id="s2">
+        <p class="section-tag">2 / 6 — Positionnement</p>
+        <h2>Positionnement & concurrence</h2>
+
+        <div class="field">
+          <label class="label">Comment vous positionnez-vous sur votre marché ?</label>
+          <div class="chips">
+            <div class="chip"><input type="radio" name="positionnement" id="p1" value="Premium / haut de gamme"><label for="p1">Premium / haut de gamme</label></div>
+            <div class="chip"><input type="radio" name="positionnement" id="p2" value="Accessible / grand public"><label for="p2">Accessible / grand public</label></div>
+            <div class="chip"><input type="radio" name="positionnement" id="p3" value="Niche / spécialisé"><label for="p3">Niche / spécialisé</label></div>
+            <div class="chip"><input type="radio" name="positionnement" id="p4" value="Challenger / disruptif"><label for="p4">Challenger / disruptif</label></div>
+            <div class="chip"><input type="radio" name="positionnement" id="p5" value="Pas encore défini"><label for="p5">Pas encore défini</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Votre marché principal est-il… ?</label>
+          <div class="chips">
+            <div class="chip"><input type="radio" name="marche" id="m1" value="Local (ville / région)"><label for="m1">Local (ville / région)</label></div>
+            <div class="chip"><input type="radio" name="marche" id="m2" value="National"><label for="m2">National</label></div>
+            <div class="chip"><input type="radio" name="marche" id="m3" value="Régional (Afrique de l'Ouest)"><label for="m3">Régional (Afrique de l'Ouest)</label></div>
+            <div class="chip"><input type="radio" name="marche" id="m4" value="International"><label for="m4">International</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="concurrents">Qui sont vos 2 ou 3 principaux concurrents ?</label>
+          <input type="text" id="concurrents" name="concurrents" placeholder="Noms séparés par des virgules…">
+        </div>
+
+        <div class="field">
+          <label class="label" for="differenciateur">Quelle est votre principale différence par rapport à eux ?</label>
+          <textarea id="differenciateur" name="differenciateur" placeholder="Ce qui vous rend unique…"></textarea>
+        </div>
+
+        <div class="field">
+          <label class="label">Quel est votre niveau de notoriété actuel ?</label>
+          <div class="range-row">
+            <input type="range" min="1" max="5" value="2" name="notoriete_score" id="notoriete"
+              oninput="document.getElementById('not-val').textContent=notLbl(this.value)">
+            <span class="range-val" id="not-val">Peu connu</span>
+          </div>
+          <div class="scale-labels"><span>Inconnu</span><span>Leader du marché</span></div>
+          <!-- champ caché pour capturer le label lisible -->
+          <input type="hidden" name="notoriete" id="notoriete-hidden" value="Peu connu">
+        </div>
+      </div>
+
+      <!-- ÉTAPE 3 : Audience -->
+      <div class="section" id="s3">
+        <p class="section-tag">3 / 6 — Audience</p>
+        <h2>Cible & audience</h2>
+
+        <div class="field">
+          <label class="label">Votre clientèle est principalement… ?</label>
+          <div class="chips">
+            <div class="chip"><input type="radio" name="b2x" id="b1" value="B2C — particuliers"><label for="b1">B2C — particuliers</label></div>
+            <div class="chip"><input type="radio" name="b2x" id="b2" value="B2B — professionnels / entreprises"><label for="b2">B2B — professionnels</label></div>
+            <div class="chip"><input type="radio" name="b2x" id="b3" value="B2C et B2B (les deux)"><label for="b3">Les deux</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="cible">Décrivez votre client idéal</label>
+          <p class="hint">Âge, sexe, localisation, niveau socio-économique, habitudes, aspirations…</p>
+          <textarea id="cible" name="client_ideal" placeholder="Ex. : Femme, 30-45 ans, urbaine, active, soucieuse de son image…"></textarea>
+        </div>
+
+        <div class="field">
+          <label class="label">Quels réseaux sociaux votre audience utilise-t-elle le plus ?</label>
+          <div class="chips">
+            <div class="chip"><input type="checkbox" name="reseaux" id="rs1" value="Facebook"><label for="rs1">Facebook</label></div>
+            <div class="chip"><input type="checkbox" name="reseaux" id="rs2" value="Instagram"><label for="rs2">Instagram</label></div>
+            <div class="chip"><input type="checkbox" name="reseaux" id="rs3" value="TikTok"><label for="rs3">TikTok</label></div>
+            <div class="chip"><input type="checkbox" name="reseaux" id="rs4" value="WhatsApp"><label for="rs4">WhatsApp</label></div>
+            <div class="chip"><input type="checkbox" name="reseaux" id="rs5" value="LinkedIn"><label for="rs5">LinkedIn</label></div>
+            <div class="chip"><input type="checkbox" name="reseaux" id="rs6" value="YouTube"><label for="rs6">YouTube</label></div>
+            <div class="chip"><input type="checkbox" name="reseaux" id="rs7" value="X / Twitter"><label for="rs7">X / Twitter</label></div>
+            <div class="chip"><input type="checkbox" name="reseaux" id="rs8" value="Autre / incertain"><label for="rs8">Autre / incertain</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="probleme">Quel problème concret votre marque résout-elle ?</label>
+          <textarea id="probleme" name="probleme_client" placeholder="Le besoin ou la frustration que vous adressez mieux que quiconque…"></textarea>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 4 : Présence actuelle -->
+      <div class="section" id="s4">
+        <p class="section-tag">4 / 6 — Présence actuelle</p>
+        <h2>Présence digitale actuelle</h2>
+
+        <div class="field">
+          <label class="label">Avez-vous déjà un site web ?</label>
+          <div class="chips">
+            <div class="chip"><input type="radio" name="site_web" id="site1" value="Oui, fonctionnel"><label for="site1">Oui, fonctionnel</label></div>
+            <div class="chip"><input type="radio" name="site_web" id="site2" value="Oui, mais à refaire"><label for="site2">Oui, mais à refaire</label></div>
+            <div class="chip"><input type="radio" name="site_web" id="site3" value="Non"><label for="site3">Non</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="site-url">Lien de votre site (si existant)</label>
+          <input type="url" id="site-url" name="url_site" placeholder="https://…">
+        </div>
+
+        <div class="field">
+          <label class="label">Sur quels canaux êtes-vous actif en ce moment ?</label>
+          <div class="chips">
+            <div class="chip"><input type="checkbox" name="canaux" id="c1" value="Réseaux sociaux"><label for="c1">Réseaux sociaux</label></div>
+            <div class="chip"><input type="checkbox" name="canaux" id="c2" value="Email / newsletter"><label for="c2">Email / newsletter</label></div>
+            <div class="chip"><input type="checkbox" name="canaux" id="c3" value="Publicité en ligne"><label for="c3">Publicité en ligne</label></div>
+            <div class="chip"><input type="checkbox" name="canaux" id="c4" value="SEO / blog"><label for="c4">SEO / blog</label></div>
+            <div class="chip"><input type="checkbox" name="canaux" id="c5" value="WhatsApp Business"><label for="c5">WhatsApp Business</label></div>
+            <div class="chip"><input type="checkbox" name="canaux" id="c6" value="Marketplace (Jumia, etc.)"><label for="c6">Marketplace</label></div>
+            <div class="chip"><input type="checkbox" name="canaux" id="c7" value="Aucun pour l'instant"><label for="c7">Aucun pour l'instant</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Disposez-vous d'une identité visuelle définie ?</label>
+          <div class="chips">
+            <div class="chip"><input type="radio" name="charte" id="ch1" value="Oui, charte complète"><label for="ch1">Oui, charte complète</label></div>
+            <div class="chip"><input type="radio" name="charte" id="ch2" value="Partielle (logo seulement)"><label for="ch2">Logo seulement</label></div>
+            <div class="chip"><input type="radio" name="charte" id="ch3" value="Non, à créer"><label for="ch3">Non, à créer</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="pain">Quel est votre plus grand point de douleur digital actuel ?</label>
+          <textarea id="pain" name="point_douleur" placeholder="Ex. : Pas de visibilité, peu d'engagement, image incohérente…"></textarea>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 5 : Objectifs -->
+      <div class="section" id="s5">
+        <p class="section-tag">5 / 6 — Objectifs</p>
+        <h2>Objectifs & ambitions</h2>
+
+        <div class="field">
+          <label class="label">Quels sont vos objectifs prioritaires (6 mois) ?</label>
+          <div class="chips">
+            <div class="chip"><input type="checkbox" name="objectifs" id="o1" value="Accroître la notoriété"><label for="o1">Accroître la notoriété</label></div>
+            <div class="chip"><input type="checkbox" name="objectifs" id="o2" value="Générer des leads / ventes"><label for="o2">Générer des leads / ventes</label></div>
+            <div class="chip"><input type="checkbox" name="objectifs" id="o3" value="Booster l'engagement"><label for="o3">Booster l'engagement</label></div>
+            <div class="chip"><input type="checkbox" name="objectifs" id="o4" value="Fidéliser les clients"><label for="o4">Fidéliser les clients</label></div>
+            <div class="chip"><input type="checkbox" name="objectifs" id="o5" value="Lancer un produit / service"><label for="o5">Lancer un produit / service</label></div>
+            <div class="chip"><input type="checkbox" name="objectifs" id="o6" value="Renforcer l'image de marque"><label for="o6">Renforcer l'image de marque</label></div>
+            <div class="chip"><input type="checkbox" name="objectifs" id="o7" value="Développer une communauté"><label for="o7">Développer une communauté</label></div>
+            <div class="chip"><input type="checkbox" name="objectifs" id="o8" value="Marque employeur"><label for="o8">Marque employeur</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="resultat">Quel résultat concret attendez-vous dans 6 mois ?</label>
+          <textarea id="resultat" name="resultat_attendu" placeholder="En termes mesurables : abonnés, contacts, ventes, trafic…"></textarea>
+        </div>
+
+        <div class="field">
+          <label class="label" for="budget">Budget digital mensuel estimé</label>
+          <select id="budget" name="budget">
+            <option value="">— Sélectionner —</option>
+            <option>Moins de 100 000 FCFA</option>
+            <option>100 000 – 300 000 FCFA</option>
+            <option>300 000 – 700 000 FCFA</option>
+            <option>700 000 – 1 500 000 FCFA</option>
+            <option>Plus de 1 500 000 FCFA</option>
+            <option>Non défini / à discuter</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 6 : Contexte -->
+      <div class="section" id="s6">
+        <p class="section-tag">6 / 6 — Contexte</p>
+        <h2>Contexte & informations complémentaires</h2>
+
+        <div class="field">
+          <label class="label">Avez-vous une équipe interne dédiée au digital ?</label>
+          <div class="chips">
+            <div class="chip"><input type="radio" name="equipe" id="eq1" value="Oui, équipe complète"><label for="eq1">Oui, équipe complète</label></div>
+            <div class="chip"><input type="radio" name="equipe" id="eq2" value="1 à 2 personnes"><label for="eq2">1 à 2 personnes</label></div>
+            <div class="chip"><input type="radio" name="equipe" id="eq3" value="Non, aucune ressource interne"><label for="eq3">Aucune ressource</label></div>
+            <div class="chip"><input type="radio" name="equipe" id="eq4" value="Sous-traitance partielle"><label for="eq4">Sous-traitance partielle</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">La marque est-elle… ?</label>
+          <div class="chips">
+            <div class="chip"><input type="radio" name="maturite" id="mat1" value="En création / lancement"><label for="mat1">En lancement</label></div>
+            <div class="chip"><input type="radio" name="maturite" id="mat2" value="Existante, à développer"><label for="mat2">À développer</label></div>
+            <div class="chip"><input type="radio" name="maturite" id="mat3" value="Établie, à moderniser"><label for="mat3">À moderniser</label></div>
+            <div class="chip"><input type="radio" name="maturite" id="mat4" value="En repositionnement"><label for="mat4">En repositionnement</label></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="contraintes">Contraintes spécifiques à respecter</label>
+          <p class="hint">Approbation légale, saisonnalité, charte imposée, délais…</p>
+          <textarea id="contraintes" name="contraintes" placeholder="Tout ce qui pourrait limiter ou orienter la stratégie…"></textarea>
+        </div>
+
+        <div class="field">
+          <label class="label" for="references">Marques ou campagnes qui vous inspirent</label>
+          <input type="text" id="references" name="references" placeholder="Locales ou internationales, tous secteurs confondus…">
+        </div>
+
+        <div class="field">
+          <label class="label" for="extra">Informations complémentaires ou questions</label>
+          <textarea id="extra" name="notes" placeholder="Tout ce que vous souhaitez ajouter…"></textarea>
+        </div>
+      </div>
+
+      <!-- Succès -->
+      <div class="success" id="success-msg">
+        <div class="success-icon">✓</div>
+        <h2>Brief envoyé avec succès !</h2>
+        <p>Merci pour vos réponses. Nous allons analyser votre brief et vous recontacter très prochainement avec une proposition stratégique adaptée à votre marque.</p>
+      </div>
+
+    </div><!-- /.card -->
+
+    <!-- Navigation -->
+    <div class="nav" id="nav-bar">
+      <button type="button" class="btn" id="btn-prev" onclick="prevStep()" disabled>← Précédent</button>
+      <span class="nav-info" id="nav-info">Étape 1 sur 6</span>
+      <button type="button" class="btn btn-primary" id="btn-next" onclick="nextStep()">Suivant →</button>
+    </div>
+
+  </form>
+
+  <div class="footer">
+    Ce formulaire est sécurisé. Vos réponses nous aident à bâtir la meilleure stratégie pour votre marque.
+  </div>
+
+</div><!-- /.wrap -->
+
+<script>
+  let step = 1;
+  const total = 6;
+
+  function notLbl(v) {
+    return ['','Inconnu','Peu connu','En développement','Bien établi','Leader du marché'][v];
+  }
+
+  // Sync le champ caché notoriété
+  const rangeEl = document.getElementById('notoriete');
+  const hiddenNot = document.getElementById('notoriete-hidden');
+  rangeEl.addEventListener('input', function() {
+    const lbl = notLbl(this.value);
+    document.getElementById('not-val').textContent = lbl;
+    hiddenNot.value = lbl;
+  });
+
+  function showStep(n) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById('s' + n).classList.add('active');
+    const pct = Math.round(n / total * 100);
+    document.getElementById('pbar').style.width = pct + '%';
+    document.getElementById('step-label').textContent = 'Étape ' + n + ' sur ' + total;
+    document.getElementById('step-pct').textContent = pct + ' %';
+    document.getElementById('nav-info').textContent = 'Étape ' + n + ' sur ' + total;
+    document.getElementById('btn-prev').disabled = n === 1;
+    document.getElementById('btn-next').textContent = n === total ? 'Envoyer le brief ✓' : 'Suivant →';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function nextStep() {
+    if (step < total) {
+      step++;
+      showStep(step);
+    } else {
+      submitForm();
+    }
+  }
+
+  function prevStep() {
+    if (step > 1) { step--; showStep(step); }
+  }
+
+  function submitForm() {
+    const form = document.getElementById('main-form');
+    const btn = document.getElementById('btn-next');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+
+    const data = new FormData(form);
+
+    fetch('https://formsubmit.co/ajax/frederic.dagnon@hotmail.fr', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success === 'true' || data.success === true) {
+        showSuccess();
+      } else {
+        throw new Error('Échec');
+      }
+    })
+    .catch(() => {
+      form.submit();
+    });
+  }
+
+  function showSuccess() {
+    document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+    document.getElementById('success-msg').style.display = 'block';
+    document.getElementById('nav-bar').style.display = 'none';
+    document.getElementById('pbar').style.width = '100%';
+    document.getElementById('step-label').textContent = 'Questionnaire complété';
+    document.getElementById('step-pct').textContent = '100 %';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
+    /* Header */
+    .header {
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--blue-light);
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .header p {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* Progress */
+    .progress-wrap {
+      margin-bottom: 2rem;
+    }
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-bottom: 8px;
+    }
+    .progress-bar {
+      height: 4px;
+      background: var(--gray-200);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--blue);
+      border-radius: 2px;
+      transition: width .4s ease;
+    }
+
+    /* Card */
+    .card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      padding: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Section */
+    .section { display: none; }
+    .section.active { display: block; }
+    .section-tag {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+    .section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    /* Fields */
+    .field { margin-bottom: 1.4rem; }
+    .field:last-child { margin-bottom: 0; }
+    label.label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-800);
+      margin-bottom: 6px;
+    }
+    .hint {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    input[type=text], input[type=url], textarea, select {
+      width: 100%;
+      padding: 10px 13px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--gray-800);
+      background: #fff;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    input[type=text]:focus, input[type=url]:focus, textarea:focus, select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+    }
+    textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
+    select { cursor: pointer; }
+
+    /* Chips */
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip input[type=radio], .chip input[type=checkbox] {
+      position: absolute; opacity: 0; width: 0; height: 0;
+    }
+    .chip label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 15px;
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      cursor: pointer;
+      color: var(--gray-600);
+      background: #fff;
+      transition: all .15s;
+      user-select: none;
+    }
+    .chip label:hover { border-color: var(--blue); color: var(--blue); }
+    .chip input:checked + label {
+      background: var(--blue-light);
+      color: var(--blue);
+      border-color: var(--blue-mid);
+      font-weight: 600;
+    }
+
+    /* Range */
+    .range-row { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+    .range-row input[type=range] {
+      flex: 1; -webkit-appearance: none; height: 4px;
+      background: var(--gray-200); border-radius: 2px; outline: none;
+    }
+    .range-row input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 18px; height: 18px;
+      border-radius: 50%; background: var(--blue); cursor: pointer;
+      border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.2);
+    }
+    .range-val {
+      font-size: 13px; font-weight: 600; min-width: 110px;
+      color: var(--blue); text-align: right;
+    }
+    .scale-labels {
+      display: flex; justify-content: space-between;
+      font-size: 11px; color: var(--gray-400); margin-top: 6px;
+    }
+
+    /* Nav */
+    .nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.5rem; margin-top: 1rem;
+    }
+    .nav-info { font-size: 13px; color: var(--gray-400); }
+    .btn {
+      padding: 10px 22px; border-radius: var(--radius);
+      font-size: 14px; font-weight: 600; font-family: inherit;
+      cursor: pointer; transition: all .15s; border: 1px solid var(--gray-200);
+      background: #fff; color: var(--gray-600);
+    }
+    .btn:hover { background: var(--gray-50); border-color: var(--gray-400); }
+    .btn:disabled { opacity: .35; cursor: not-allowed; }
+    .btn-primary {
+      background: var(--blue); color: #fff; border-color: var(--blue);
+    }
+    .btn-primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
+
+    /* Success */
+    .success { display: none; text-align: center; padding: 2rem 1rem; }
+    .success-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: #d1fae5; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 1.5rem; font-size: 28px;
+    }
+    .success h2 { font-size: 22px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
+    .success p { font-size: 15px; color: var(--gray-600); line-height: 1.6; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 1.25rem; }
+      .header h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="header">
+    <div class="badge">Cadrage client</div>
+    <h1>Brief stratégie digitale</h1>
+    <p>Ce questionnaire nous permet de mieux comprendre votre marque, votre marché et vos ambitions pour construire une stratégie digitale sur mesure.</p>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-top">
+      <span id="step-label">Étape 1 sur 6</span>
+      <span id="step-pct">17 %</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="pbar" style="width:17%"></div>
+    </div>
+  </div>
+
+  <!-- ===== FORMULAIRE ===== -->
   <form name="brief-strategie" method="POST" data-netlify="true" id="main-form" novalidate>
     <input type="hidden" name="form-name" value="brief-strategie">
 
